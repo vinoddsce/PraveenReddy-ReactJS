@@ -1,4 +1,4 @@
-// var yearOfBirth = 2000;
+var yearOfBirth = 2000;
 
 // var vinod = {
 //     firstName: "Vinod",
@@ -13,21 +13,37 @@
 //     }
 // }
 
-// setTimeout(() => {
-//     console.log(vinod.calculateAge(2019));
-// }, 5000);
-
-
-function second() {
-    setTimeout(() => {
-        console.log("How are you doing");
-    }, 5000);
+var Person = function (firstName, lastName, yearOfBirth, job) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.yearOfBirth = yearOfBirth;
+    this.job = job;
 }
 
-function first() {
-    console.log("Hey There !!!!");
-    second();
-    console.log("The End !!!!");
+Person.prototype.display = function () {
+    console.log(this.firstName, this.lastName, this.job);
 }
 
-first();
+Person.prototype.calculateAge = function (currentYear) {
+    var innerFunction = (year) => {
+        return year - this.yearOfBirth;
+    }
+    return innerFunction(currentYear);
+}
+
+var vinod = new Person("Vinod", "Kumar", 1990, 'Teacher');
+console.log(vinod.calculateAge(2019));
+vinod.display();
+var praveen = new Person("Praveen", "Reddy", 1995, 'Designer');
+console.log(praveen.calculateAge(2019));
+praveen.display();
+
+
+
+
+
+
+setTimeout(() => {
+    console.log(vinod.calculateAge(2019));
+}, 5000);
+
