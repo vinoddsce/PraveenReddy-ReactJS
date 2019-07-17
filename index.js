@@ -1,36 +1,33 @@
-// var arrowFunction = () => {
-//     console.log("Hi, This Is Arrow Function", this);
+// var yearOfBirth = 2000;
+
+// var vinod = {
+//     firstName: "Vinod",
+//     lastName: "Kumar",
+//     job: "Trainer",
+//     yearOfBirth: 1990,
+//     calculateAge: function (currentYear) {
+//         var innerFunction = (year) => {
+//             return year - this.yearOfBirth;
+//         }
+//         return innerFunction(currentYear);
+//     }
 // }
-// arrowFunction();
 
-var yearOfBirth = 2000;
+// setTimeout(() => {
+//     console.log(vinod.calculateAge(2019));
+// }, 5000);
 
-var vinod = {
-    firstName: "Vinod",
-    lastName: "Kumar",
-    job: "Trainer",
-    yearOfBirth: 1990,
-    calculateAge: function (currentYear) {
-        // function innerFunction(year) {
-        //     return year - this.yearOfBirth;
-        // }
-        var innerFunction = (year) => {
-            return year - this.yearOfBirth;
-        }
-        return innerFunction(currentYear);
-    }
+
+function second() {
+    setTimeout(() => {
+        console.log("How are you doing");
+    }, 5000);
 }
 
+function first() {
+    console.log("Hey There !!!!");
+    second();
+    console.log("The End !!!!");
+}
 
-
-console.log(vinod.calculateAge);
-
-
-
-// function f1(f) {
-//     f();
-// }
-// function f2() {
-//     console.log("f2");
-// }
-// f1(f2);
+first();
