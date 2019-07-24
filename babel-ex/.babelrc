@@ -1,0 +1,32 @@
+// {
+//     "plugins": [
+//         "@babel/plugin-transform-arrow-functions"
+//     ]
+// }
+// {
+//     "presets": [
+//         [
+//             "@babel/preset-env",
+//             {
+//                 "targets": {
+//                     "browsers": [
+//                         "last 2 versions",
+//                         "safari >= 7"
+//                     ]
+//                 }
+//             }
+//         ]
+//     ]
+// }
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "node": "1.0"
+                }
+            }
+        ]
+    ]
+}
